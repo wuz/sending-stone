@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Lora:wght@400;600&display=swap");
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-text-color: #222;
+  --main-background-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-text-color: #fff;
+    --main-background-color: #222;
+  }
+}
+
+html {
+  font-size: 14px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
+  color: var(--main-text-color);
+  background-color: var(--main-background-color);
+}
+
+.introPage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titlebar {
+  height: 30px;
+  background-color: var(--main-background-color);
+}
+
+.drag {
+    -webkit-app-region: drag;
+}
+
+.no-drag {
+    -webkit-app-region: no-drag;
+}
+
+*, a, button {
+    cursor: default;
+    user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  max-width: 100vw;
+  font-size: 16px;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  max-width: 100vw;
+}
+
+.sidebar {
+  flex: 0 1 15vw;
+  min-width: 200px;
+  height: 100vh;
+  border-right: 1px solid #c1c1c1;
+  padding: 8px 12px;
+}
+
+.card-container {
+  background: #222;
+  flex: 1 0 85vw;
+  height: 100vh;
+  padding: 1vw;
+  font-family: Lora;
+}
+
+.card > * + * {
+  margin-top: 1rem;
+}
+
+.card {
+  font-size: 8vmin;
+}
+
+
+.avatar {
+  width: 30vw;
+  float: right;
+  padding: 1vw;
+  shape-outside: circle();
+}
+
+.characterName {
+  font-size: 1.3em;
+  width: 80vw;
+  margin-bottom: 2vw;
+}
+
+.statBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.statName {
+  font-family: Lato;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.4em;
+}
+
+.attributes .stat {
+  padding: 0.3em 0.6em;
+  margin-right: 1em;
+}
+
+.attributes > div {
+  border: 6px solid #b88846;
+  border-radius: 22vw;
+  height: 15vw;
+  width: 15vw;
+  padding: 2vw;
+}
+
+.attributes > div:last-child {
+  /* AC */
+  border-radius: 0;
+  border-bottom-left-radius: 18vw 20vw;
+  border-bottom-right-radius: 18vw 20vw;
+  padding-bottom: 3vw;
+}
+
+.abilities {
+  justify-content: space-between;
+  max-width: 100vw;
+  clear: both;
+  margin-top: 1rem;
+}
+
+.abilities .stat {
+  width: 30vw;
+  margin-top: 1rem;
+  border: 25px solid currentColor;
+  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E")
+    25;
+}
